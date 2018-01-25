@@ -28,7 +28,7 @@ export class IntroPage {
       color: "#75507b"
     },
     {
-      title: "Please wait your result\nuntil this Friday.",
+      title: "Please wait your result\nuntil this Friday",
       description: "Contact : <br>Sarah Lee, engel5105@ajou.ac.kr ",
       image: "./assets/slide4.png",
       color: "#555753"

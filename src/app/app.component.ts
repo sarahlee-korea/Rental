@@ -19,40 +19,22 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    this.menu = [          
+    this.menu = [
 
         {
-          title: 'Layout with firebase',
+          title: 'Menu',
           myicon:'',
           iconLeft: 'ios-filing',
           icon: 'ios-add-outline',
           showDetails: false,
           items:  [
-                
+              {name:'Authentication(Profile)',component:'AfterLoginPage'},
               {name:'Authentication(Login)',component:'MainPage'},
               {name:'Authentication(Register)',component:'RegisterPage'},
               {name:'Authentication(Forgot)',component:'ForgotPage'},
-              {name:'Authentication(Profile)',component:'AfterLoginPage'},
-              {name:'Chart',component:'ChartPage'},
-
-              {name:'City guide', component: 'Category1Page'},// app1 folder
+              {name:'Intro', component:'IntroPage'},
               {name:'Shopping',component:'Category2Page'},// app2 folder
               {name:'Restaurant',component:'Category3Page'}, // app3 folder
-              {name:'Google map',component: 'MapPage'},
-              {name:'Image gallery',component: 'GalleryPage'},
-              {name:'Feed',component: 'FeedPage'},
-              {name:'Form',component: 'FormResultPage'},
-
-
-              {name:'Intro', component:'IntroPage'},
-
-              {name:'Pinterest(Masonry)',component: 'MasonryPage'},
-              {name:'Profile1',component: 'ProfilePage'},
-              {name:'Profile2',component: 'Profile2Page'},
-              {name:'Profile3',component: 'Profile3Page'},
-              {name:'Profile4', component: 'Profile4Page'},
-              {name:'Radio player',component:'RadioListPage'},
-
               {name:'Search',component:'SearchPage'},
               {name:'Timeline',component: 'TimelinePage'}
           ]
@@ -63,11 +45,9 @@ export class MyApp {
           showDetails: false,
           items:  [
                 {name:'Accordion',component:'AccordionPage'},
-
                 {name:'Action sheet',component:'ActionsheetPage'},
                 {name:'Alert',component:'AlertPage'},
                 {name:'Animation',component:'AnimationsPage'},
-
                 {name:'Button',component:'ButtonPage'},
                 {name:'Datetime',component:'DatetimePage'},
                 {name:'Fab', component:'FabPage'},
@@ -80,13 +60,11 @@ export class MyApp {
                 {name:'Label',component:'LabelPage'},
                 {name:'Radio button',component:'RadioButtonPage'},
                 {name:'Rating',component:'RatingPage'},
-                
                 {name:'Range',component:'RangePage'},
                 {name:'Search bar', component:'SearchBarPage'},
                 {name:'Select option',component:'SelectOptionPage'},
                 {name:'Segment',component:'SegmentPage'},
                 {name:'Shrinking',component:'ShrinkingPage'},
-
                 {name:'Tag',component:'TagPage'},
                 {name:'Table',component:'TablePage'},
                 {name:'Transparent header',component:'TransparentHeaderPage'},
@@ -107,9 +85,9 @@ export class MyApp {
         }
     ];
 
-    this.pages = [ 
+    this.pages = [
       // { icon:'call', title:'Contact us', component: 'ContactPage' },
-      { icon:'bookmark', title:'Version 2.0.2', component: "MainPage" }    
+      { icon:'bookmark', title:'Version 2.0.2', component: "MainPage" }
     ];
 
   }
@@ -118,7 +96,7 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      
+
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -136,7 +114,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    // page.component = item array.component --> 
+    // page.component = item array.component -->
     //this.nav.setRoot(page.component);
     this.nav.setRoot(page.component);
   }
