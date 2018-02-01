@@ -9,7 +9,7 @@
 
 <ion-content [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
   <div class="login-container">
-    <img class="logo" src="./assets/ionic.png" />
+    <img class="logo" src="./assets/user-avartar2.png" />
     <!--*********** Form ***********-->
 
     <form [formGroup]="registerForm" (submit)="registerUser()" novalidate>
@@ -38,7 +38,7 @@
       </ion-item>
 
 
-      
+
       <ion-item class="error-message">
         <p *ngIf="!registerForm.controls.profileName.valid  &&
                 registerForm.controls.profileName.dirty">*Please enter your name.</p>

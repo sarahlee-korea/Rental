@@ -11,7 +11,7 @@
     <div class="profile-box">
         <div text-center>
             <img *ngIf="(profile | async)?.photo" src="{{(profile | async)?.photo}}" class="edit-avatar pop-in" alt="">
-            <img  *ngIf="!(profile | async)?.photo" src = "https://pbs.twimg.com/profile_images/834457277830541312/bYMCvtHD.jpg" class="edit-avatar pop-in" alt="">
+            <img  *ngIf="!(profile | async)?.photo" src = "./assets/user-avartar2.png" class="edit-avatar pop-in" alt="">
             <p class="name-text">{{(profile | async)?.name}}</p>
         </div>
     </div>

@@ -33,10 +33,7 @@ export class MyApp {
               {name:'Authentication(Register)',component:'RegisterPage'},
               {name:'Authentication(Forgot)',component:'ForgotPage'},
               {name:'Intro', component:'IntroPage'},
-              {name:'Shopping',component:'Category2Page'},// app2 folder
-              {name:'Restaurant',component:'Category3Page'}, // app3 folder
-              {name:'Search',component:'SearchPage'},
-              {name:'Timeline',component: 'TimelinePage'}
+              {name:'Rental',component:'Category2Page'},// app2 folder
           ]
         }, {
           title: 'Components',

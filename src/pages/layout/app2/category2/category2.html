@@ -4,7 +4,7 @@
         <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Shopping</ion-title>
+        <ion-title>Rental</ion-title>
         <ion-buttons right>
             <button ion-button icon-only>
                 <ion-icon name="md-more"></ion-icon>
@@ -19,9 +19,9 @@
 <ion-content>
 
   <ion-card tappable  *ngFor="let category of category" (click)="openList(category.$key)">
-        <div class="banner-bg" [ngStyle]="{'background-image': 'url(' + category.imgBg+ ')'}">
-          <h2 class="banner-title"> {{category.name}}</h2> 
-          <p class="banner-description"> {{category.description}}</p>               
+        <div class="banner-bg" [ngStyle]="{'background-image': 'url(' + category.image+ ')'}">
+          <h2 class="banner-title"> {{category.name}}</h2>
+          <p class="banner-description"> {{category.description}}</p>
         </div>
   </ion-card>
 

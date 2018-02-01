@@ -4,7 +4,7 @@
         <button ion-button menuToggle color="light">
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title color="light" >Shopping</ion-title>
+        <ion-title color="light" >Rental</ion-title>
     </ion-navbar>
   <ion-toolbar color="flat-wet-asphalt">
       <ion-searchbar ></ion-searchbar>
@@ -20,7 +20,7 @@
                         <div *ngIf="item.discount"  class="ribbon pop-in">SALE</div>
                         <img class="pop-in" src={{item.imgSmall}}   />
                         <ion-card-header>
-                            {{item.name}} 
+                            {{item.name}}
                         </ion-card-header>
                         <ion-card-content>
                             <p *ngIf="!item.discount" ion-text  color="special-blue"><strong>${{item.price}}</strong></p>

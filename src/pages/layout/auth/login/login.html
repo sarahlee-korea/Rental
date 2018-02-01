@@ -8,8 +8,8 @@
 
 <ion-content [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
   <div class="login-container">
-    <img class="logo" src="./assets/ionic.png" />
-    
+    <img class="logo" src="./assets/user-avartar2.png" />
+
     <!--*********** Form ***********-->
     <form [formGroup]="loginForm" (submit)="login()" novalidate>
       <ion-item>
@@ -30,11 +30,11 @@
         <p *ngIf="!loginForm.controls.password.valid  &&
                 loginForm.controls.password.dirty">*Password needs more than 6 characters.</p>
       </ion-item>
-     
+
       <div class="submit-box">
         <button ion-button mode="ios" block type="submit" color="blue2">Log in</button>
 
-        
+
         <button ion-button type="button" mode="ios" block icon-left color="light" outline (click)="createAccount()" margin-top>
             <ion-icon name="ios-create"></ion-icon> Create new account
         </button>
