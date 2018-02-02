@@ -19,18 +19,18 @@ export class AuthData {
 //   canActivate() {
 //       return this.checkIfLoggedIn();
 //   }
- 
+
 //   private checkIfLoggedIn(): boolean{
- 
+
 //       // A call to the actual login service would go here
 //       // For now we'll just randomly return true or false
- 
+
 //       let loggedIn:boolean = Math.random() < 0.5;
- 
+
 //       if(!loggedIn){
 //           console.log("LoginGuard: The user is not logged in and can't navigate product details");
 //       }
- 
+
 //       return loggedIn;
 //   }
 
@@ -64,11 +64,11 @@ signInWithPopupFacebook(): Promise<any> {
 //   - npm install --save @ionic-native/facebook
 
 // 2. - Import {facebook} from '@ionic-native/facebook' to app.module.ts
-//    - add facebook to providers in app.module.ts 
+//    - add facebook to providers in app.module.ts
 // 3. - Import {facebook} from '@ionic-native/facebook' to page.
 //    - Add facebook to constructor.
 
-// acebookLogin(){
+// FacebookLogin(){
 //   this.facebook.login(['email']).then( (response) => {
 //       const facebookCredential = firebase.auth.FacebookAuthProvider
 //           .credential(response.authResponse.accessToken);
@@ -86,19 +86,19 @@ signInWithPopupFacebook(): Promise<any> {
 // }
 //Run Android platform error with “cordova-plugin-facebook4”
 // https://forum.ionicframework.com/t/run-android-platform-error-with-cordova-plugin-facebook4/114510
-signInWithFacebook(): Promise<any> {
-  if (this.platform.is('cordova')) {
-    return this.facebook.login(['email', 'public_profile']).then(res => {
-      const facebookCredential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
-      return firebase.auth().signInWithCredential(facebookCredential);
-    })
-  }
-  else {
-    return this.afAuth.auth
-      .signInWithPopup(new firebase.auth.FacebookAuthProvider())
-      .then(res => console.log(res));
-  }
-}
+// signInWithFacebook(): Promise<any> {
+//   if (this.platform.is('cordova')) {
+//     return this.facebook.login(['email', 'public_profile']).then(res => {
+//       const facebookCredential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
+//       return firebase.auth().signInWithCredential(facebookCredential);
+//     })
+//   }
+//   else {
+//     return this.afAuth.auth
+//       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
+//       .then(res => console.log(res));
+//   }
+// }
 signInWithGoogle(): Promise<any> {
   alert("call signin with google")
   if (this.platform.is('cordova')) {
@@ -107,7 +107,7 @@ signInWithGoogle(): Promise<any> {
       'webClientId':'134053776757-rj2vajjm340t2bilpencqq4hh1j76sv5.apps.googleusercontent.com',
       'offline': true}).then(res =>{
       alert('2')
-      return firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken)) 
+      return firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken))
     })
   }
   else {
@@ -118,8 +118,8 @@ signInWithGoogle(): Promise<any> {
   }
 }
 
-  
-  
+
+
 
 
 
@@ -144,13 +144,13 @@ STOPsignInWithFacebook(): Promise<any> {
         alert("facebookuserId ="+ facebookUid)
         alert("firebaseUid = "+firebaseUid)
 
- 
-        
+
+
         alert("END")
         //this.getUserDetail(facebookUid,firebaseUid,"fb");       4
         //return user;
       });
-      
+
     })
   }
   else {
@@ -177,7 +177,7 @@ STOPsignInWithFacebook(): Promise<any> {
 //         //this.getUserDetail(facebookUid,firebaseUid,"fb");       4
 //         //return user;
 //       });
-      
+
 //     })
 //   }
 //   else {
@@ -222,13 +222,13 @@ getUserDetail(facebookUid,firebaseUid,authType) {
   alert("call userExistCallBack")
   firebase.database().ref('/userProfile').child(uid).once('value', function(snapshot) {
     var exists = (snapshot.val() !== null);
-   
+
       if (exists) {
         alert('user ' + uid + ' exists!');
         //var adaNameRef = firebase.database().ref('userProfile/userId');
         // Modify the 'first' and 'last' properties, but leave other data at
         // adaNameRef unchanged.
-        firebase.database().ref('userProfile/'+uid).update({ 
+        firebase.database().ref('userProfile/'+uid).update({
           name: displayName,
           email: email,
           photo: photo,
@@ -240,7 +240,7 @@ getUserDetail(facebookUid,firebaseUid,authType) {
           //   description: data.description
           // });
           //firebase.database().ref('/userProfile').update(userId, { name: name });
-          // firebase.database().ref('/userProfile').update(userId, { 
+          // firebase.database().ref('/userProfile').update(userId, {
           //   title: "email",
           //   description: picture
           // });
@@ -251,7 +251,7 @@ getUserDetail(facebookUid,firebaseUid,authType) {
         //   description:data.description
         // });
         firebase.database().ref('/userProfile').child(uid).set({
-          
+
           name: displayName,
           email: email,
           photo: photo,
@@ -270,7 +270,7 @@ getUserDetail(facebookUid,firebaseUid,authType) {
     //var adaNameRef = firebase.database().ref('userProfile/userId');
     // Modify the 'first' and 'last' properties, but leave other data at
     // adaNameRef unchanged.
-    firebase.database().ref('userProfile/'+firebaseUid).update({ 
+    firebase.database().ref('userProfile/'+firebaseUid).update({
       name: name,
       email: email,
       picture: picture,
@@ -281,7 +281,7 @@ getUserDetail(facebookUid,firebaseUid,authType) {
       //   description: data.description
       // });
       //firebase.database().ref('/userProfile').update(userId, { name: name });
-      // firebase.database().ref('/userProfile').update(userId, { 
+      // firebase.database().ref('/userProfile').update(userId, {
       //   title: "email",
       //   description: picture
       // });
@@ -292,7 +292,7 @@ getUserDetail(facebookUid,firebaseUid,authType) {
     //   description:data.description
     // });
     firebase.database().ref('/userProfile').child(firebaseUid).set({
-      
+
       name: name,
       email: email,
       picture: picture,
@@ -300,7 +300,7 @@ getUserDetail(facebookUid,firebaseUid,authType) {
     });
   }
 }
-// Tests to see if /users/<userId> has any data. 
+// Tests to see if /users/<userId> has any data.
 // checkIfUserExists(userId) {
 //   //var usersRef = new Firebase(USERS_LOCATION);
 //   firebase.database().ref('/userProfile').child(userId).once('value', function(snapshot) {
@@ -316,16 +316,16 @@ getUserDetail(facebookUid,firebaseUid,authType) {
 
 
 // googleLogin(){
-  
+
 //   let loadingPopup = this.loadingCtrl.create({
-//   spinner: 'crescent', 
+//   spinner: 'crescent',
 //   content: ''
 //   });
 //   loadingPopup.present();
-  
-  
-  
-  
+
+
+
+
 //   this.googleplus.login({
 //       'webClientId':'134053776757-rj2vajjm340t2bilpencqq4hh1j76sv5.apps.googleusercontent.com',
 //       'offline': true
@@ -342,13 +342,13 @@ getUserDetail(facebookUid,firebaseUid,authType) {
 //                 alert("displayname="+this.displayName +this.email+this.imageUrl+ this.familyName )
 //                 loadingPopup.dismiss();
 //                 this.navCtrl.setRoot('AfterLoginPage');
-        
+
 //             }).catch(error =>{
 //                 loadingPopup.dismiss().then( () => {
 //                   alert("Error line 138"+error)
 //                 });
 //             })
-  
+
 //       // add catch error here
 //           //loadingPopup.dismiss();
 //   }).catch(error =>{
@@ -376,7 +376,7 @@ getUserDetail(facebookUid,firebaseUid,authType) {
     return this.afAuth.auth.signOut();
   }
 
-  
+
   registerUser(name: string, email: string, password: string,phone: number): Promise<any> {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then((newUser) => {
       firebase.database().ref('/userProfile').child(newUser.uid).set({

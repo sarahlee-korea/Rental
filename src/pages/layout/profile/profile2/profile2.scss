@@ -66,18 +66,15 @@
         -ms-flex-align:  flex-start !important;
         align-items:  flex-start !important;
     }
-    .opening-time ul{
-       padding-left: 1.2em;
-    }
 
-    ion-list > .item:first-child, 
+    ion-list > .item:first-child,
     ion-list > .item-block:first-child .item {
         border-bottom: none;
     }
     .list-ios > .item-block:first-child {
         /* border-top: 0.55px solid #c8c7cc; */
     }
-    ion-list > .item:last-child, 
+    ion-list > .item:last-child,
     ion-list > .item-block:last-child .item {
         border-bottom: none;
     }

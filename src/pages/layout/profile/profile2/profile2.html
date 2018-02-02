@@ -1,5 +1,5 @@
 <ion-header no-border>
-    <ion-navbar transparent> 
+    <ion-navbar transparent>
         <button ion-button menuToggle>
           <ion-icon name="menu" color="light"  [hidden]="showToolbar"></ion-icon>
         </button>
@@ -21,11 +21,6 @@
           </button>
 
           <ion-list no-lines padding-top>
-              <ion-item class="icon-align" >
-                <ion-icon name="md-cafe" item-left></ion-icon>
-                <h2>Opening time</h2>
-                  <div [innerHTML]="(profile2 | async)?.openingTime" class="opening-time"></div>
-              </ion-item>
               <ion-item class="icon-align" text-wrap>
                   <ion-icon name="ios-pin" item-left></ion-icon>
                   <h2>About</h2>
@@ -41,18 +36,9 @@
                 <h2>facebook.com/starbuck</h2>
                 <p>facebook</p>
               </ion-item>
-              <ion-item class="icon-align">
-                  <ion-icon name="logo-skype" item-left></ion-icon>
-                  <h2>starbuck@outlook.com</h2>
-                  <p>skype</p>
-              </ion-item>
           </ion-list>
 
       </div>
     </div>
 
 </ion-content>
-
-
-
-

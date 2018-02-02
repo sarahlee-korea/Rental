@@ -22,7 +22,7 @@ export class Category2Page {
 
       this.afDB.list('/category', {query: {
           orderByChild: "type",
-          equalTo: "ecom" 
+          equalTo: "rental"
       }}).subscribe(categoryItems => {
         this.category = categoryItems;
         loadingPopup.dismiss()
@@ -30,7 +30,7 @@ export class Category2Page {
   }
 
   openList(categoryId){
-      this.navCtrl.push('List2Page',{categoryId:categoryId}); 
+      this.navCtrl.push('List2Page',{categoryId:categoryId});
   }
 
 }

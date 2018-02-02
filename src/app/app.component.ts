@@ -28,12 +28,12 @@ export class MyApp {
           icon: 'ios-add-outline',
           showDetails: false,
           items:  [
+              {name:'Intro', component:'IntroPage'},
+              {name:'Rental',component:'Category2Page'},// app2 folder
               {name:'Authentication(Profile)',component:'AfterLoginPage'},
               {name:'Authentication(Login)',component:'MainPage'},
               {name:'Authentication(Register)',component:'RegisterPage'},
               {name:'Authentication(Forgot)',component:'ForgotPage'},
-              {name:'Intro', component:'IntroPage'},
-              {name:'Rental',component:'Category2Page'},// app2 folder
           ]
         }, {
           title: 'Components',
@@ -41,7 +41,6 @@ export class MyApp {
           icon: 'ios-add-outline',
           showDetails: false,
           items:  [
-                {name:'Accordion',component:'AccordionPage'},
                 {name:'Action sheet',component:'ActionsheetPage'},
                 {name:'Alert',component:'AlertPage'},
                 {name:'Animation',component:'AnimationsPage'},
@@ -83,7 +82,7 @@ export class MyApp {
     ];
 
     this.pages = [
-      // { icon:'call', title:'Contact us', component: 'ContactPage' },
+      { icon:'call', title:'Contact us', component: 'ContactPage' },
       { icon:'bookmark', title:'Version 2.0.2', component: "MainPage" }
     ];
 

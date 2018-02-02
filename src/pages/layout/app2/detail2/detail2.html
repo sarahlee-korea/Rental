@@ -1,6 +1,6 @@
 
 <ion-header >
-    <ion-navbar color="flat-wet-asphalt"  > 
+    <ion-navbar color="flat-wet-asphalt"  >
         <ion-title color="light">Detail</ion-title>
     </ion-navbar>
 </ion-header>
@@ -9,19 +9,19 @@
 
     <!--*********** Header with image background  ***********-->
     <div class="product-header slide-up" [ngStyle]="{'background-image': 'url(' + (item | async)?.imgSmall + ')'}">
-            <div *ngIf="(item | async)?.discount"  class="ribbon">SALE</div>
+            <!--<div *ngIf="(item | async)?.discount"  class="ribbon">SALE</div>-->
     </div>
 
     <!--*********** Product name / Price  ***********-->
     <div text-center>
         <h2 ion-text> {{(item | async)?.name}}</h2>
-        <div *ngIf="(item | async)?.discount"  class="discount"> 
+        <div *ngIf="(item | async)?.discount"  class="discount">
           <h3 ion-text color="special-blue">Price: ${{(item | async)?.price}}</h3>
         </div>
         <h3 *ngIf="!(item | async)?.discount" ion-text color="special-blue">Price: ${{(item | async)?.price}}</h3>
         <h3 *ngIf="(item | async)?.discount" ion-text color="red">Price: ${{(item | async)?.discountPrice}}</h3>
     </div>
-  
+
     <!--*********** Detail ( Description,Color,Size)  ***********-->
     <ion-card>
       <ion-card-content>
