@@ -16,10 +16,10 @@
     <div text-center>
         <h2 ion-text> {{(item | async)?.name}}</h2>
         <div *ngIf="(item | async)?.discount"  class="discount">
-          <h3 ion-text color="special-blue">Price: ${{(item | async)?.price}}</h3>
+          <!--<h3 ion-text color="special-blue">Price: ${{(item | async)?.price}}</h3>-->
         </div>
-        <h3 *ngIf="!(item | async)?.discount" ion-text color="special-blue">Price: ${{(item | async)?.price}}</h3>
-        <h3 *ngIf="(item | async)?.discount" ion-text color="red">Price: ${{(item | async)?.discountPrice}}</h3>
+        <!--<h3 *ngIf="!(item | async)?.discount" ion-text color="special-blue">Price: ${{(item | async)?.price}}</h3>-->
+        <!--<h3 *ngIf="(item | async)?.discount" ion-text color="red">Price: ${{(item | async)?.discountPrice}}</h3>-->
     </div>
 
     <!--*********** Detail ( Description,Color,Size)  ***********-->
@@ -32,22 +32,10 @@
 
         <ion-list no-lines margin-top>
             <ion-item>
-              <ion-label>Color</ion-label>
+              <ion-label>Quantity</ion-label>
               <ion-select [(ngModel)]="color">
-                <ion-option  value="Red" selected="true">Red</ion-option>
-                <ion-option value="Black">Black</ion-option>
-                <ion-option value="Blue">Blue</ion-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-            <ion-list no-lines>
-            <ion-item>
-              <ion-label>Size</ion-label>
-              <ion-select [(ngModel)]="size">
-                <ion-option  value="nes" selected="true">Small</ion-option>
-                <ion-option value="n64">Middle</ion-option>
-                <ion-option value="ps">Large</ion-option>
-                <ion-option value="genesis">Extra large</ion-option>
+                <ion-option  value="Quantity" selected="true">1</ion-option>
+                <ion-option value="2">2</ion-option>
               </ion-select>
             </ion-item>
           </ion-list>
